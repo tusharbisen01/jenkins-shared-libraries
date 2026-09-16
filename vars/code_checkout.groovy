@@ -1,12 +1,12 @@
 def call(String repoUrl, String branch) {
-    echo "Checking out branch: ${main}"
-    echo "Repository: ${https://github.com/tusharbisen01/Wanderlust-Mega-Project.git}"
+    echo "Checking out branch: ${branch}"
+    echo "Repository: ${repoUrl}"
 
     checkout([
         $class: 'GitSCM',
-        branches: [[name: "*/${main}"]],
+        branches: [[name: "*/${branch}"]],
         userRemoteConfigs: [[
-            url: https://github.com/tusharbisen01/Wanderlust-Mega-Project.git
+            url: repoUrl
         ]]
     ])
 }
